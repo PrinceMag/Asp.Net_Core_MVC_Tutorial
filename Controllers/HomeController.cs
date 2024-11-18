@@ -87,5 +87,27 @@ namespace Asp.Net_Core_MVC_Tutorial.Controllers
         {
             return View();
         }
+
+        //Action parameter
+        public ViewResult List()
+        {
+            return View();
+        }
+
+        public ContentResult Details()
+        {
+            int x = Convert.ToInt32(Request.Query["id"]);
+            string country = "";
+            switch (x)
+            {
+                case 1: country = "South Africa"; break;
+                case 2: country = "Zimbabwe"; break;
+                case 3: country = "South Africa"; break;
+                default:
+                    country = "Sorry, you do not belong to any country";
+                    break;
+            }
+            return Content(country);
+        }
     }
 }
