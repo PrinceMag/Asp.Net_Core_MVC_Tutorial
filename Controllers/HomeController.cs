@@ -67,5 +67,25 @@ namespace Asp.Net_Core_MVC_Tutorial.Controllers
                 name = "Prince"
             };
         }
+
+        //using action method
+        [ActionName("testimonials")]
+        public ViewResult Testimony()
+        {
+            return View("Testimony");
+        }
+
+        //non action method
+        [NonAction]
+        public string Greet()
+        {
+            return "Hello World!";
+        }
+
+        [HttpGet]
+        public ViewResult Help()
+        {
+            return View();
+        }
     }
 }
